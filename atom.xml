@@ -2,11 +2,21 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://songlang25973.github.io/</id>
     <title>朗</title>
-    <updated>2021-06-06T09:06:35.106Z</updated>
+    <updated>2021-06-06T09:13:32.408Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://songlang25973.github.io/"/>
     <link rel="self" href="https://songlang25973.github.io/atom.xml"/>
-    <subtitle>&lt;script src=&quot;https://v1.hitokoto.cn/?encode=text&amp;select=%23hitokoto&quot; defer&gt;&lt;/script&gt;</subtitle>
+    <subtitle>&lt;p id=&quot;hitokoto&quot;&gt;&lt;a href=&quot;#&quot; id=&quot;hitokoto_text&quot;&gt;:D 获取中...&lt;/a&gt;&lt;/p&gt;
+&lt;script&gt;
+  fetch(&apos;https://v1.hitokoto.cn&apos;)
+    .then(response =&gt; response.json())
+    .then(data =&gt; {
+      const hitokoto = document.getElementById(&apos;hitokoto_text&apos;)
+      hitokoto.href = &apos;https://hitokoto.cn/?uuid=&apos; + data.uuid
+      hitokoto.innerText = data.hitokoto
+    })
+    .catch(console.error)
+&lt;/script&gt;</subtitle>
     <logo>https://songlang25973.github.io/images/avatar.png</logo>
     <icon>https://songlang25973.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 朗</rights>
